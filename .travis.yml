@@ -1,0 +1,33 @@
+addons:
+  apt:
+    packages:
+    - git
+    - ebtables
+    - iproute2
+    - tcpdump
+    - socat
+    - qemu-kvm
+    - bridge-utils
+    - bison
+    - flex
+    - libdb5.3-dev
+install:
+    - pushd
+    - cd /tmp/
+    - git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/shemminger/iproute2
+    - cd iproute2
+    - git checkout v4.2.0
+    - make
+    - make install
+    - popd
+    - git clone git@github.com:miniworld-project/miniworld_core.git
+    - cd miniworld_core
+    - git checkout nightly
+language: python
+python:
+    - "2.7"
+install: "pip install -r requirements.txt"
+# command to run tests
+script: 
+    - pushd miniworld_core/tests/acceptance
+    - pytest
