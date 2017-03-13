@@ -1,17 +1,6 @@
 sudo: required
-addons:
-  apt:
-    packages:
-    - git
-    - ebtables
-    - tcpdump
-    - socat
-    - qemu-kvm
-    - bridge-utils
-    - bison
-    - flex
-    - libdb-dev
 install:
+    - apt-get update && apt-get install git ebtables qemu-kvm bridge-utils bison flex libdb-dev
     - pushd
     - cd /tmp/
     - git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/shemminger/iproute2
