@@ -3,14 +3,13 @@ addons:
     packages:
     - git
     - ebtables
-    - iproute2
     - tcpdump
     - socat
     - qemu-kvm
     - bridge-utils
     - bison
     - flex
-    - libdb5.3-dev
+    - libdb-dev
 install:
     - pushd
     - cd /tmp/
