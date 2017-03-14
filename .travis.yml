@@ -23,4 +23,4 @@ script:
     #- pushd tests/acceptance
     #- popd
     - ls /dev/|grep kvm
-    - sudo -E pytest
+    - sudo sh -c "/home/travis/virtualenv/python2.7/bin/activate && pytest"
