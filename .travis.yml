@@ -20,5 +20,6 @@ script:
     - echo $PWD
     - ls
     #- pushd tests/acceptance
-    - popd
+    #- popd
+    - ls /dev/|grep kvm
     - sudo -E pytest
