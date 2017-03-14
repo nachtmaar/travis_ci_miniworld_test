@@ -1,6 +1,7 @@
 sudo: required
 install:
-    - sudo apt-get update && sudo apt-get install git ebtables qemu-kvm bridge-utils bison flex libdb-dev
+    - sudo su
+    - apt-get update && apt-get install git ebtables qemu-kvm bridge-utils bison flex libdb-dev
     - pushd /tmp/
     - git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/shemminger/iproute2
     - cd iproute2
@@ -11,7 +12,7 @@ install:
     - git clone https://github.com/miniworld-project/miniworld_core.git
     - pushd miniworld_core
     - git checkout nightly
-    - sudo pip install -r requirements.txt
+    - pip install -r requirements.txt
 language: python
 python:
     - "2.7"
@@ -20,4 +21,4 @@ script:
     - echo $PWD
     - ls
     - pushd tests/acceptance
-    - sudo pytest
+    - pytest
