@@ -23,5 +23,5 @@ script:
     #- pushd tests/acceptance
     #- popd
     - ls /dev/|grep kvm
-    - chown -R root:root /home/travis/virtualenv/python2.7/bin/activate
+    - sudo chown -R root:root /home/travis/virtualenv/python2.7/bin/activate
     - sudo sh -c "/home/travis/virtualenv/python2.7/bin/activate && pytest"
