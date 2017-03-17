@@ -24,4 +24,4 @@ script:
     #- popd
     #- sudo chown -R root:root /home/travis/virtualenv/python2.7
     #- sudo chmod +x /home/travis/virtualenv/python2.7/bin/activate 
-    - sudo sh -c "source /home/travis/virtualenv/python2.7/bin/activate && pytest -s"
+    - sudo bash -c "source /home/travis/virtualenv/python2.7/bin/activate && pytest -s"
