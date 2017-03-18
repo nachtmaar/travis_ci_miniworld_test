@@ -3,6 +3,8 @@ matrix:
     - os: linux
       dist: trusty
       sudo: required
+  python:
+    - "2.7"
 install:
     - sudo apt-get update && sudo apt-get install git ebtables qemu-kvm bridge-utils bison flex libdb-dev
     - pip install pytest
@@ -18,8 +20,6 @@ install:
     - git checkout testing
     - sudo bash -c "source /home/travis/virtualenv/python2.7/bin/activate && pip install -r requirements.txt"
 language: python
-python:
-    - "2.7"
 # command to run tests
 script: 
     - uname -a
