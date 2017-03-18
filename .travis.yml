@@ -23,5 +23,5 @@ language: python
 # command to run tests
 script: 
     - uname -a
-    - pushd tests/acceptance
-    - sudo bash -c "source /home/travis/virtualenv/python2.7/bin/activate && pytest -s"
+    #- pushd tests/acceptance
+    - sudo bash -c "source /home/travis/virtualenv/python2.7/bin/activate && pytest -s tests/acceptance"
