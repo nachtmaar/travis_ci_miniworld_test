@@ -6,22 +6,8 @@ matrix:
   python:
     - "2.7"
 install:
-    - sudo apt-get update && sudo apt-get install git ebtables qemu-kvm bridge-utils bison flex libdb-dev wget
-    - pip install pytest
-    - pushd /tmp/
-    - git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/shemminger/iproute2
-    - cd iproute2
-    - git checkout v4.2.0
-    - make
-    - sudo make install
-    - popd
-    - git clone https://github.com/miniworld-project/miniworld_core.git 
-    - pushd miniworld_core
-    - git checkout testing
-    - sudo bash -c "source /home/travis/virtualenv/python2.7/bin/activate && pip install -r requirements.txt"
 language: python
 # command to run tests
 script: 
+    - pwd
     - uname -a
-    #- pushd tests/acceptance
-    - sudo bash -c "source /home/travis/virtualenv/python2.7/bin/activate && pytest -s tests/acceptance"
